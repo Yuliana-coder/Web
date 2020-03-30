@@ -1,0 +1,146 @@
+html, body {
+    width:100%;
+    margin: 0 auto;
+}
+/*Все содержимое страницы - флекс-контейнер, в котором айтемы выравниваются в колонну и по середине*/
+.container-body{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: row wrap;
+        flex-wrap: row wrap;
+    max-width: 70%;
+}
+/*шапка страницы - флекс-контейнер, содержимое выравнивается в колонну по середине*/
+.header{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2%;
+    border-color: black;
+    /* background-color: aqua; */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+/*флекс-контейнер с фотокарточками, айтемы выравниваются по горизонтальной линии и в центре*/
+.cards{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /* background-color: aqua; */
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 4%;
+}
+/*картинка в фотокарточке*/
+.item-card__img-card{
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 50%;
+}
+/*картинка в зоголовке "Тензор"*/
+.header__img-logo{
+    max-height: 30px;
+    max-width: 30px;
+}
+/*фотокарточка*/
+.item-card{
+    padding: 1%;
+    /* background-color: coral;  */
+    margin: 3%;
+}
+/*тест с содержимым фотокарточки*/
+.item-card__text{
+    text-align: center;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    /* background-color: white; */
+    /* max-width: 70%; */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+}
+
+/*срока с номером телефона*/
+.item-card__number{
+    opacity: 0;
+}
+.item-card:hover .item-card__number{
+/*    background-color: white;*/
+    opacity:1;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+/*для выделения блока карточки при наведении мышью*/
+.item-card:hover{
+    /* transition: 1s; */
+    position: relative;
+    -webkit-box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
+            box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2); 
+    cursor: pointer;
+}
+/*заголовок*/
+.header__title{
+    font-family: Arial, Verdana, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 540px; 
+    font-size: 33px;  
+    text-transform: uppercase;
+}
+/* основной текст шапки (или описание) */
+.header__inscription{
+    text-align: center;
+    margin-top: 4%;
+    font-family: Arial, Verdana, sans-serif;
+    font-weight: 100;
+    font-size: 22px;
+    max-width: 70%;
+    /* background-color: lightpink; */
+}
+/* чтобы заголовок в шапке был на одной линии с картинкой */
+.header_logo-inline{
+    display: inline;   
+}
+/* выравнивание заголовка в шапке */
+.header__logo-text{
+    text-align: center;
+/*    background-color: aqua;*/
+}
+/*полоска после заголовка*/
+.header__logo-text::after{
+    content: '';
+    display: block;
+    height: 4px;
+    background: black;
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;   
+}
