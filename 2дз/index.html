@@ -4,72 +4,64 @@
 		<meta charset="utf-8">
 		<title>Tensor School</title>
         <link rel="stylesheet" type="text/css" href="style/style.css"/>
+        <script src="js/card.js" defer></script>
 	</head>
 	<body class="container-body">
 		<header>
             <div class="header">
-                <div class="header__logo-text">
-                    <img src="img/logo.png" class = "header__img-logo" alt="logo"/>
-                    <div class="header__title header_logo-inline" >Tensor School</div>
-                </div>
+                <img src="img/logo.png" class = "header__img-logo" alt="logo"/>
+                <div class="header__title" >Tensor School</div>
                 <div class="header__inscription">Это страница школы Тензор в городе Уфа. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.</div>
             </div>
         </header>
         
         <div class="cards">
-            <div class="item-card">
-                <div>
-                    <img src="img/ava1.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Маша Иванова</div>
-                </div>
-                <div class="item-card__text">УГАТУ 2 курс</div>
-                <div class="item-card__text item-card__number">2-222-222-2222</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava1.png" data-name="Маша Иванова" data-birthday="9 сентября" data-number="89871111111">
+                <img src="img/ava1.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text" >Маша Иванова</div>
+                <div class="item-card__text item-card__text_light-indent">УГАТУ 2 курс</div>
+                <div></div>
             </div>
 
-            <div class="item-card">
-                <div>
-                    <img src="img/ava2.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Миша Петров</div>
-                </div>
-                <div class="item-card__text">СурГУ 3 курс</div>
-                <div class="item-card__text item-card__number">1-111-111-1111</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava2.png" data-name="Миша Петров" data-birthday="20 апреля" data-number="89871212333">
+                <img src="img/ava2.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text ">Миша Петров</div>
+                <div class="item-card__text item-card__text_light-indent">СурГУ 3 курс</div>
             </div>
             
-            <div class="item-card">
-                <div>
-                    <img src="img/ava3.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Марат Сидоров</div>
-                </div>
-                <div class="item-card__text">БГУ 4 курс</div>
-                <div class="item-card__text item-card__number">3-333-333-33333</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava3.png" data-name="Марат Сидоров" data-birthday="8 октября" data-number="89870808999">
+                <img src="img/ava3.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text ">Марат Сидоров</div>
+                <div class="item-card__text item-card__text_light-indent">БГУ 4 курс</div>
             </div>
             
-            <div class="item-card">
-                <div>
-                    <img src="img/ava1.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Маша Иванова</div>
-                </div>
-                <div class="item-card__text">УГАТУ 2 курс</div>
-                <div class="item-card__text item-card__number">2-222-222-2222</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava1.png" data-name="Маша Иванова" data-birthday="9 сентября"" data-number="89871111111">
+                <img src="img/ava1.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text ">Маша Иванова</div>
+                <div class="item-card__text item-card__text_light-indent">УГАТУ 2 курс</div>
             </div>
             
-            <div class="item-card">
-                <div>
-                    <img src="img/ava2.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Миша Петров</div>
-                </div>
-                <div class="item-card__text">СурГУ 3 курс</div>
-                <div class="item-card__text item-card__number">1-111-111-1111</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava2.png" data-name="Миша Петров" data-birthday="20 апреля" data-number="89871212333">
+                <img src="img/ava2.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text ">Миша Петров</div>
+                <div class="item-card__text item-card__text_light-indent">СурГУ 3 курс</div>
             </div>
                         
-            <div class="item-card">
-                <div>
-                    <img src="img/ava3.png" class = "item-card__img-card" alt="photo" />
-                    <div class="item-card__text">Марат Сидоров</div>
-                </div>
-                <div class="item-card__text">БГУ 4 курс</div>
-                <div class="item-card__text item-card__number">3-333-333-33333</div>
+            <div class="item-card" data-online="В сети" data-photo="img/ava3.png" data-name="Марат Сидоров" data-birthday="8 октября" data-number="89870808999">
+                <img src="img/ava3.png" class = "item-card__img-card" alt="photo" />
+                <div class="item-card__text ">Марат Сидоров</div>
+                <div class="item-card__text item-card__text_light-indent">БГУ 4 курс</div>
             </div>
+                <!-- здесь будет карточкапо клику -->
+            <div class="click-card hide-card">
+                <button class="btn-exit">ВЫЙТИ</button>
+                <img src="img/ava3.png" class = "click-card__photo" alt="photo">
+                <div class="click-card__status">статус: </div>
+                <div class="click-card__name">Имя: </div>
+                <div class="click-card__birthday">День рождения: </div>
+                <div class="click-card__number">Телефон: </div>
+            </div>
+
         </div>
 	</body>
 </html>
