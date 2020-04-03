@@ -139,7 +139,7 @@ html, body {
     border-radius: 10px;
     z-index: 100;
     box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
-    margin: -125px 0 0 -125px; 
+    margin-left: 180px;
 }
 /*фото на всплывающем окне-карточке при нажатии*/
 .click-card__photo
@@ -181,3 +181,43 @@ html, body {
       margin-bottom: 30px;
       margin-top: 0;
   }
+/*скрытый блок-поле, чтобы при нажатии на него можно было выйти из нажатой карточки*/
+  .hidden-on{
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    background-color: lightblue;
+    opacity: 40%;
+    z-index: 50;
+}
+/*скрытый блок-поле - не активно*/
+.hidden-off{
+    display: none;
+}
+/* строка "статус" */
+.info-card__status
+{
+    color: gray;
+}
+/* статус профиля */
+.info-card__status-wrapper{
+    color: darkgray;
+}
+/* текст с именем в всплывшей карточке*/
+.info-card__name{
+    text-transform: uppercase;
+    font-size: x-large;
+    font-weight: 800;
+    font-stretch: extra-expanded;
+    margin-bottom: 25px;
+}
+/* текст с днем рождения и номером телефона в всплывшей карточке*/
+.info-card__birthday-field, .info-card__number-field{
+    color: gray;
+}
+/* данные о дне рождения и номере телефона профиля в всплывшей карточке */
+.info-card__birthday, .info-card__number{
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+}
