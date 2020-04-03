@@ -98,7 +98,7 @@ html, body {
     margin-left: auto;
     max-width: 200px;
     margin-right: auto;
-    max-width: 70%;
+    max-width: 200px;
 }
 /*отступ между строками в карточке*/
 .item-card__text_light-indent{
@@ -194,6 +194,15 @@ html, body {
 .hidden-off{
     display: none;
 }
+
+.info-card__status, .info-card__status-wrapper,
+.info-card__birthday-field, .info-card__number-field,
+.info-card__birthday, .info-card__number, .info-card__name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
 /* строка "статус" */
 .info-card__status
 {
