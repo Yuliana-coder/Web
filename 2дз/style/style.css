@@ -71,8 +71,8 @@ html, body {
 }
 /*картинка в фотокарточке*/
 .item-card__img-card{
-    max-height: 200px;
-    max-width: 200px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
     margin-left: 10px;
     margin-right: 10px;
@@ -110,6 +110,7 @@ html, body {
     position: relative;
     cursor: pointer;
 }
+/*создание тесни с середины для карточки при наведении*/
 .item-card:hover:after{
     content: '';
     display: block;
@@ -120,28 +121,63 @@ html, body {
     bottom: -11px;
     box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
 }
-
+/*всплывающее окно с информацией о карточке (скрыто без действия)*/
 .hide-card{
     position: absolute;
     display: none;
     z-index: -1;
 }
-
+/*при нажатии на какую-либо из карточек появляется окно с информацией о карточке (профиль)*/
 .click-card{
-    width: 300px;
-    height: 200px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 0;
+    width: 490px;
+    height: 270px;
     position: absolute;
-    background-color: honeydew;
-    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    z-index: 100;
     box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
-    top: 50%;
-    left: 50%;
-    margin: -125px 0 0 -125px;
+    margin: -125px 0 0 -125px; 
 }
-
+/*фото на всплывающем окне-карточке при нажатии*/
 .click-card__photo
 {
-    height: 100px;
-    width: 100px;
+    height: 170px;
+    width: 170px;
+    border-radius: 30%;
     float: right;
+    margin-top: 50px;
 }
+/*кнопка выхода на панели с информацией нажатой карточки*/
+.click-card__btn-exit{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color:white;
+    border-radius: 5px;
+    float: right;
+    margin: 10px;
+    margin-top: 5px; 
+    grid-column: none;
+  }
+/*создание тени при наведении на кнопку выхода на всплывшей карточке-профиле*/
+.click-card__btn-exit:hover {
+    background: white;
+    box-shadow: -1px 1px 1px -1px rgb(255, 254, 254);
+  }
+/*флекс-контейнер для текстового содержимого в всплывшем окне*/
+  .info-card{
+      display: flex;
+      margin-bottom: 80px;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+/*регулирование границ для строчки "статус" в всплывшей карточке*/
+  .info-card__status-wrapper{
+      margin-bottom: 30px;
+      margin-top: 0;
+  }
