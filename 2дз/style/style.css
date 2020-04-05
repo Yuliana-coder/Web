@@ -6,50 +6,120 @@ html, body {
 .container-body{
     min-width: 300px;
     max-width: 900px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: row wrap;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: row wrap;
+        flex-wrap: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
 }
-/*шапка страницы - флекс-контейнер, содержимое выравнивается в колонну по середине*/
-.header{
+
+/*общий вид блока шапки и карточек профиля*/
+.card{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+/*шапка страницы*/
+.card_header{
     margin: 15px;
     border-color: black;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     padding-top: 25px;
     margin: 5px;
 }
-/*картинка в заголовке "Тензор"*/
-.header__img-logo{
+/*карточка профиля*/
+.card_profile{
+    margin: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+}
+
+
+/*картинка логотипа в шапке*/
+.card__img_small{
     max-height: 30px;
     max-width: 30px;
     width: 40%;
     margin-right: 15px;
 }
-/*заголовок*/
-.header__title{
+/*фото в профиле*/
+.card__img_border{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/*наименование карточки (или шапки)*/
+.card__title{
     font-family: Arial, Verdana, sans-serif;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    overflow: hidden;
+}
+/*название в шапке*/
+.card__title_upper{
     letter-spacing: 1px;
-    font-weight: 540;
     font-size: 33px;
     text-transform: uppercase;
 }
-/* основной текст шапки (или описание) */
-.header__inscription{
+/*имя в карточке-профиле*/
+.card__title_margin{
     text-align: center;
-    margin-top: 30px;
+    white-space: nowrap;
+    margin-left: auto;
+    max-width: 200px;
+    margin-right: auto;
+    max-width: 200px;
+}
+/*текст-описание в шапке и в карточке профиле*/
+.card__inscription{
     font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    margin-top: 30px;
     font-weight: 100;
     font-size: 22px;
     width: 80%;
 }
+/*текст с название вуза в карточке -профиле*/
+.card__inscription_light{
+    white-space: nowrap;
+    margin-left: auto;
+    max-width: 200px;
+    margin-right: auto;
+    max-width: 200px;
+    margin-top: 10px;
+    color: gray;
+}
 /*полоска после заголовка*/
-.header__title:after{
+.card__title_upper:after{
     content: '';
     display: block;
     height: 4px;
@@ -62,56 +132,24 @@ html, body {
 .cards{
     margin-top: 25px; 
     margin-bottom: 30px; 
+    display: -ms-grid; 
     display: grid;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     justify-items: center;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
-/*картинка в фотокарточке*/
-.item-card__img-card{
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-/*фотокарточка*/
-.item-card{
-    /* background-color: coral;  */
-    display: flex;
-    margin: 10px;
-    flex-direction: column;
-    justify-content: center;
-
-    /* max-width: 200px; */
-    /* align-items: center; */
-    position: relative;
-}
-/*тест с содержимым фотокарточки*/
-.item-card__text{
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-left: auto;
-    max-width: 200px;
-    margin-right: auto;
-    max-width: 200px;
-}
-/*отступ между строками в карточке*/
-.item-card__text_light-indent{
-    margin-top: 10px;
-    color: gray;
-}
 /*для выделения блока карточки при наведении мышью*/
-.item-card:hover{    
+.card_profile:hover{    
     position: relative;
     cursor: pointer;
 }
 /*создание тесни с середины для карточки при наведении*/
-.item-card:hover:after{
+.card_profile:hover:after{
     content: '';
     display: block;
     height: 60%;
@@ -119,7 +157,8 @@ html, body {
     z-index: -1;
     position: absolute;
     bottom: -11px;
-    box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
+            box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
 }
 /*всплывающее окно с информацией о карточке (скрыто без действия)*/
 .hide-card{
@@ -129,8 +168,13 @@ html, body {
 }
 /*при нажатии на какую-либо из карточек появляется окно с информацией о карточке (профиль)*/
 .click-card{
+    -webkit-animation: show 400ms;
+            animation: show 400ms;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1.5fr 1fr;
     grid-template-columns: 1.5fr 1fr;
+    -ms-grid-rows: 0;
     grid-template-rows: 0;
     width: 490px;
     height: 270px;
@@ -138,9 +182,27 @@ html, body {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     z-index: 100;
-    box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
+            box-shadow: 0 15px 10px -1px rgba(0, 0, 0, .2);
     margin-left: 180px;
+    margin-top: -150px;
 }
+.click-card > *:nth-child(1){
+    -ms-grid-row:1;
+    -ms-grid-column:1;
+}
+.click-card > *:nth-child(2){
+    -ms-grid-row:1;
+    -ms-grid-column:2;
+}
+@-webkit-keyframes show {
+
+    from {opacity: 0;} to {opacity: 0;} 
+    }
+@keyframes show {
+
+    from {opacity: 0;} to {opacity: 0;} 
+    }
 /*фото на всплывающем окне-карточке при нажатии*/
 .click-card__photo
 {
@@ -165,14 +227,21 @@ html, body {
 /*создание тени при наведении на кнопку выхода на всплывшей карточке-профиле*/
 .click-card__btn-exit:hover {
     background: white;
-    box-shadow: -1px 1px 1px -1px rgb(255, 254, 254);
+    -webkit-box-shadow: -1px 1px 1px -1px rgb(255, 254, 254);
+            box-shadow: -1px 1px 1px -1px rgb(255, 254, 254);
   }
 /*флекс-контейнер для текстового содержимого в всплывшем окне*/
   .info-card{
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       margin-bottom: 80px;
-      flex-direction: column;
-      justify-content: space-around;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
       margin-left: 10px;
       margin-right: 10px;
   }
@@ -184,8 +253,8 @@ html, body {
 /*скрытый блок-поле, чтобы при нажатии на него можно было выйти из нажатой карточки*/
   .hidden-on{
     position: absolute;
-    height: 200%;
-    width: 200%;
+    height: 100%;
+    width: 169%;
     background-color: lightblue;
     opacity: 40%;
     z-index: 50;
@@ -194,12 +263,13 @@ html, body {
 .hidden-off{
     display: none;
 }
-
+/*текстовые поля ввсплывающей карточке*/
 .info-card__status, .info-card__status-wrapper,
 .info-card__birthday-field, .info-card__number-field,
 .info-card__birthday, .info-card__number, .info-card__name{
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     max-width: 250px;
 }
 

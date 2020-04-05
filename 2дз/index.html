@@ -4,64 +4,22 @@
 		<meta charset="utf-8">
 		<title>Tensor School</title>
         <link rel="stylesheet" type="text/css" href="style/style.css"/>
-        <script src="js/card.js" defer></script>
+        <script  defer src="js/main.js"></script>
+        <!-- <script  defer src="js/app.js"></script>  -->
 	</head>
 	<body class="container-body">
 		<header>
-            <div class="header">
-                <img src="img/logo.png" class = "header__img-logo" alt="logo"/>
-                <div class="header__title" >Tensor School</div>
-                <div class="header__inscription">Это страница школы Тензор в городе Уфа. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.</div>
-            </div>
+            <div class="card card_header">
+                <img src="img/logo.png" class = "card__img card__img_small" alt="logo"/>
+                <div class="card__title card__title_upper" >Tensor School</div>
+                <div class="card__inscription">Это страница школы Тензор в городе Уфа. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.</div>
+            </div> 
         </header>
         
         <div class="cards">
-            <div class="item-card" data-online="в сети" data-photo="img/ava_joe.jpg" data-name="Джо Джонас" data-birthday="9 сентября" data-number="89871111111">
-                <img src="img/ava_joe.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text" >Джо Джонас</div>
-                <div class="item-card__text item-card__text_light-indent">УГАТУ 2 курс</div>
-                <div></div>
-            </div>
-
-            <div class="item-card" data-online="в сети" data-photo="img/ava_sophi.jpg" data-name="Софи Тернер" data-birthday="20 апреля" data-number="89871212333">
-                <img src="img/ava_sophi.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text ">Софи Тернер</div>
-                <div class="item-card__text item-card__text_light-indent">СурГУ 3 курс</div>
-            </div>
-            
-            <div class="item-card" data-online="в сети" data-photo="img/ava_nick.jpg" data-name="Ник Джонас" data-birthday="8 октября" data-number="89870808999">
-                <img src="img/ava_nick.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text ">Ник Джонас</div>
-                <div class="item-card__text item-card__text_light-indent">БГУ 4 курс</div>
-            </div>
-            
-            <div class="item-card" data-online="в сети" data-photo="img/ava_den.jpg" data-name="Дениэл Джонас" data-birthday="9 сентября"" data-number="89871111111">
-                <img src="img/ava_den.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text ">Дениэл Джонас</div>
-                <div class="item-card__text item-card__text_light-indent">БГПУ 1 курс</div>
-            </div>
-            
-            <div class="item-card" data-online="в сети" data-photo="img/ava_kevin.jpg" data-name="Кевин Джонас" data-birthday="20 апреля" data-number="89871212333">
-                <img src="img/ava_kevin.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text ">Кевин Джонас</div>
-                <div class="item-card__text item-card__text_light-indent">МФТИ 3 курс</div>
-            </div>
-                        
-            <div class="item-card" data-online="в сети" data-photo="img/ava_praynka.jpg" data-name="Прянка Чопра" data-birthday="8 октября" data-number="89870808999">
-                <img src="img/ava_praynka.jpg" class = "item-card__img-card" alt="photo" />
-                <div class="item-card__text ">Прянка Чопра</div>
-                <div class="item-card__text item-card__text_light-indent">ИТМО 4 курс</div>
-            </div>
-                <!-- здесь будет карточкапо клику -->
-            <div class="hide-card" id="wind-pos">
+                <!-- здесь будет карточка по клику -->
+            <div class="hide-card">
                 <button class="click-card__btn-exit"></button>
-                <div class = "info-card">
-                    <div class="info-card__status-wrapper">статус: <span class="info-card__status"></span> </div>
-                    <div class="info-card__name"> </div>
-                    <div class="info-card__birthday-field" >День рождения: <span class="info-card__birthday"></span></div>
-                    <div class="info-card__number-field"> Телефон: <span class="info-card__number"> </span> </div>
-                </div>
-                <img src="" class = "click-card__photo" alt="photo">
             </div>
 
         </div>
