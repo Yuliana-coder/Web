@@ -150,18 +150,34 @@ const studentList = [
             this.renderCard();       
         }
 
+        //геттер для подсчета возраста пользователя
         get age(){
             let data_now = new Date();
             let arr_birth = this.studentData.birthDay.split('.');
             let age = (data_now - new Date((arr_birth.reverse()).join(' '))) / MILLISECONDS_PERYEAR;
             return parseInt(age);
         }
+
+        //вернет "лет" или "года" к указанному возрасту
+        decl(n){
+            let word;
+            if ((n%10 == 0) ||(n >= 5 && n <= 20) || (n%10 > 5 && n%10 <= 9)){
+                word = 'лет';
+            }
+            if(n%10 >= 1 && n%10 <= 5)
+            {
+                word = 'года';
+            }
+            return word;
+        }
         
+        //очистка всплывабщего блока
         _clearBloc(){
             wind.innerHTML = 
             `<button class="click-card__btn-exit"></button>`;
         }
 
+        //отрисовка всплывающей карточки-профиля
         _showCard(event)
         {
             setTimeout(1000);
@@ -170,7 +186,7 @@ const studentList = [
             `<div class = "info-card">
             <div class="info-card__status-wrapper">статус: <span class="info-card__status">${this.studentData.status}</span> </div>
             <div class="info-card__name">${this.studentData.name}</div>
-            <div class="info-card__birthday-field" >День рождения: <span class="info-card__birthday">${this.studentData.birthDay}</span></div>
+            <div class="info-card__birthday-field" >День рождения: <span class="info-card__birthday">${this.studentData.birthDay} <br />${this.age} ${this.decl(this.age)} </span></div>
             <div class="info-card__number-field"> Телефон: <span class="info-card__number">${this.studentData.number}</span> </div>
         </div>
         <img src="${this.studentData.photo}" class = "click-card__photo" alt="photo"> `;
@@ -178,6 +194,7 @@ const studentList = [
             wind.classList.add("click-card");
         }
 
+        //отрисовка профиля на странице
         renderCard(){
             let last_child = `<div class="card card_profile" data-online="в сети" data-photo="${this.studentData.photo}" data-name="${this.studentData.name}" data-birthday="${this.studentData.birthDay}" data-number="${this.studentData.number}">
             <img src="${this.studentData.photo}" class = "card__img card__img_border" alt="photo" />
@@ -189,16 +206,16 @@ const studentList = [
             cards.lastChild.addEventListener("mouseout", this._closeCard);
         }
 
+        //закрытие карты после того как курсор мыши перейдет с карточки на другое место
         _closeCard(event){
             wind.classList.remove("click-card");
             wind.classList.add("hide-card");
-            this._clearBloc(); 
-            cards.lastChild.removeEventListener("mouseover", this._showCard);
-            cards.lastChild.removeEventListener("mouseout", this._closeCard);          
+            this._clearBloc();        
         }
 
     }
     
+    //создаем объекты-студенты в соответсвии с размерами заполненного массива о студентах
     for(let i = 0; i < studentList.length; i++)
     {
         new Student(studentList[i]);
